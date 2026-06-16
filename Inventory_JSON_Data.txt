@@ -1,0 +1,205 @@
+JSON DATA for Inventory Management :
+Post:
+
+[
+  {
+    "itemName": "Carrot",
+    "category": "VEGETABLE",
+    "unitType": "KG",
+    "availableStock": 5,
+    "pricePerUnit": 50,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Onion",
+    "category": "VEGETABLE",
+    "unitType": "KG",
+    "availableStock": 25,
+    "pricePerUnit": 35,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Tomato",
+    "category": "VEGETABLE",
+    "unitType": "KG",
+    "availableStock": 20,
+    "pricePerUnit": 40,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Potato",
+    "category": "VEGETABLE",
+    "unitType": "KG",
+    "availableStock": 30,
+    "pricePerUnit": 30,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Coconut",
+    "category": "VEGETABLE",
+    "unitType": "PCS",
+    "availableStock": 50,
+    "pricePerUnit": 25,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Curry Leaves",
+    "category": "VEGETABLE",
+    "unitType": "BUNDLE",
+    "availableStock": 15,
+    "pricePerUnit": 10,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Rice",
+    "category": "GROCERY",
+    "unitType": "KG",
+    "availableStock": 100,
+    "pricePerUnit": 60,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Urad Dal",
+    "category": "GROCERY",
+    "unitType": "KG",
+    "availableStock": 20,
+    "pricePerUnit": 140,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Toor Dal",
+    "category": "GROCERY",
+    "unitType": "KG",
+    "availableStock": 25,
+    "pricePerUnit": 160,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Rava",
+    "category": "GROCERY",
+    "unitType": "KG",
+    "availableStock": 30,
+    "pricePerUnit": 55,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Milk",
+    "category": "DAIRY",
+    "unitType": "LTR",
+    "availableStock": 20,
+    "pricePerUnit": 55,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Curd",
+    "category": "DAIRY",
+    "unitType": "KG",
+    "availableStock": 15,
+    "pricePerUnit": 80,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Ghee",
+    "category": "DAIRY",
+    "unitType": "LTR",
+    "availableStock": 10,
+    "pricePerUnit": 650,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Cooking Oil",
+    "category": "GROCERY",
+    "unitType": "LTR",
+    "availableStock": 50,
+    "pricePerUnit": 150,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Mustard Seeds",
+    "category": "SPICE",
+    "unitType": "KG",
+    "availableStock": 5,
+    "pricePerUnit": 180,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Cumin Seeds",
+    "category": "SPICE",
+    "unitType": "KG",
+    "availableStock": 4,
+    "pricePerUnit": 350,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Red Chilli Powder",
+    "category": "SPICE",
+    "unitType": "KG",
+    "availableStock": 8,
+    "pricePerUnit": 280,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Turmeric Powder",
+    "category": "SPICE",
+    "unitType": "KG",
+    "availableStock": 6,
+    "pricePerUnit": 220,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Salt",
+    "category": "GROCERY",
+    "unitType": "KG",
+    "availableStock": 20,
+    "pricePerUnit": 25,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  },
+  {
+    "itemName": "Sugar",
+    "category": "GROCERY",
+    "unitType": "KG",
+    "availableStock": 25,
+    "pricePerUnit": 45,
+    "receivedDate": "2026-06-08",
+    "createdBy": "ABC",
+    "updatedBy": "ABC"
+  }
+]
