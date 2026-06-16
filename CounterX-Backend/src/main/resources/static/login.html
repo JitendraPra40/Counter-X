@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Counter-X Login</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+
+background:linear-gradient(to right,#28a745,#20c997);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+
+}
+
+.login-box{
+
+width:400px;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0px 0px 10px gray;
+
+}
+
+.login-box h2{
+
+text-align:center;
+color:#28a745;
+margin-bottom:20px;
+
+}
+
+input{
+
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid gray;
+border-radius:5px;
+
+}
+
+button{
+
+width:100%;
+padding:12px;
+background:#28a745;
+color:white;
+border:none;
+border-radius:5px;
+font-size:18px;
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:orange;
+
+}
+
+p{
+
+text-align:center;
+margin-top:15px;
+
+}
+
+a{
+
+text-decoration:none;
+color:blue;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<h2>Counter-X Login</h2>
+
+<input
+type="text"
+id="username"
+placeholder="Enter Username">
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password">
+
+<button onclick="login()">
+
+Login
+
+</button>
+
+<p>
+
+Admin Login<br>
+
+Username :
+<b>admin</b><br>
+
+Password :
+<b>admin123</b>
+
+</p>
+
+<p>
+
+Customer Login<br>
+
+Username :
+<b>customer</b><br>
+
+Password :
+<b>1234</b>
+
+</p>
+
+<p>
+
+Don't have an account?
+
+<a href="register.html">
+
+Register
+
+</a>
+
+</p>
+
+</div>
+
+<script src="login.js"></script>
+
+</body>
+
+</html>

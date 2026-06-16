@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Counter-X Bill</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#f5f5f5;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+header{
+
+    background:#28a745;
+    color:white;
+    text-align:center;
+    padding:18px;
+    font-size:28px;
+    font-weight:bold;
+
+}
+
+.bill{
+
+    width:600px;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px gray;
+
+}
+
+h2{
+
+    text-align:center;
+    color:#28a745;
+
+}
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+
+}
+
+table th{
+
+    background:#28a745;
+    color:white;
+    padding:10px;
+
+}
+
+table td{
+
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:center;
+
+}
+
+.info{
+
+    margin-top:15px;
+    line-height:30px;
+    font-size:18px;
+
+}
+
+.total{
+
+    margin-top:20px;
+    font-size:24px;
+    font-weight:bold;
+    text-align:right;
+
+}
+
+button{
+
+    margin-top:30px;
+    width:100%;
+    padding:12px;
+    background:#28a745;
+    color:white;
+    border:none;
+    font-size:18px;
+    border-radius:5px;
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    background:orange;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+Counter-X Restaurant Bill
+
+</header>
+
+<div class="bill">
+
+<h2>Payment Receipt</h2>
+
+<div class="info">
+
+<p><b>Bill No :</b> <span id="billNo"></span></p>
+
+<p><b>Token No :</b> <span id="tokenNo"></span></p>
+
+<p><b>Transaction ID :</b> <span id="txn"></span></p>
+
+<p><b>Date :</b> <span id="date"></span></p>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Food Item</th>
+<th>Price</th>
+
+</tr>
+
+</thead>
+
+<tbody id="billItems">
+
+</tbody>
+
+</table>
+
+<div class="total">
+
+Total : ₹ <span id="total"></span>
+
+</div>
+
+<button onclick="printBill()">
+
+Print Bill
+
+</button>
+
+</div>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let transactionId =
+localStorage.getItem("transactionId");
+
+let totalAmount =
+localStorage.getItem("totalAmount");
+
+let billNo = Math.floor(Math.random()*9000)+1000;
+
+let tokenNo = Math.floor(Math.random()*100)+1;
+
+document.getElementById("billNo").innerHTML=billNo;
+
+document.getElementById("tokenNo").innerHTML=tokenNo;
+
+document.getElementById("txn").innerHTML=transactionId;
+
+document.getElementById("total").innerHTML=totalAmount;
+
+document.getElementById("date").innerHTML=
+new Date().toLocaleString();
+
+let html="";
+
+cart.forEach(item=>{
+
+html+=`
+
+<tr>
+
+<td>${item.name}</td>
+
+<td>₹${item.price}</td>
+
+</tr>
+
+`;
+
+});
+
+document.getElementById("billItems").innerHTML=html;
+
+function printBill(){
+
+window.print();
+
+localStorage.removeItem("cart");
+localStorage.removeItem("transactionId");
+localStorage.removeItem("totalAmount");
+
+}
+
+</script>
+
+</body>
+
+</html>

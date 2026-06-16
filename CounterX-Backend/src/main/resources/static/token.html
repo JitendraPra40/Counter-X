@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Counter-X Token</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f5f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.token-card{
+
+    width:450px;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px gray;
+    text-align:center;
+
+}
+
+h1{
+
+    color:#28a745;
+    margin-bottom:20px;
+
+}
+
+.token{
+
+    font-size:70px;
+    font-weight:bold;
+    color:red;
+    margin:20px 0;
+
+}
+
+.info{
+
+    font-size:20px;
+    margin:10px;
+
+}
+
+button{
+
+    margin-top:20px;
+    padding:12px 25px;
+    background:#28a745;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:18px;
+
+}
+
+button:hover{
+
+    background:orange;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="token-card">
+
+<h1>Counter-X Token</h1>
+
+<div class="token" id="tokenNo">
+
+001
+
+</div>
+
+<div class="info">
+
+Order ID :
+<span id="orderId"></span>
+
+</div>
+
+<div class="info">
+
+Transaction ID :
+<span id="transactionId"></span>
+
+</div>
+
+<div class="info">
+
+Status :
+<b style="color:green;">
+
+Waiting For Preparation
+
+</b>
+
+</div>
+
+<div class="info">
+
+Date :
+<span id="date"></span>
+
+</div>
+
+<button onclick="window.print()">
+
+Print Token
+
+</button>
+
+</div>
+
+<script>
+
+let token =
+localStorage.getItem("tokenNumber") ||
+Math.floor(Math.random()*900+100);
+
+let orderId =
+localStorage.getItem("orderId") ||
+Math.floor(Math.random()*10000);
+
+let transactionId =
+localStorage.getItem("transactionId") ||
+"N/A";
+
+document.getElementById("tokenNo").innerHTML =
+token;
+
+document.getElementById("orderId").innerHTML =
+orderId;
+
+document.getElementById("transactionId").innerHTML =
+transactionId;
+
+document.getElementById("date").innerHTML =
+new Date().toLocaleString();
+
+localStorage.setItem("tokenNumber",token);
+
+</script>
+
+</body>
+
+</html>

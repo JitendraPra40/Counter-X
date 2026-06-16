@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Counter-X Revenue</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f5f5;
+}
+
+header{
+    background:#28a745;
+    color:white;
+    text-align:center;
+    padding:18px;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    margin-top:30px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    width:250px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0px 0px 10px gray;
+}
+
+.card h2{
+    color:#28a745;
+}
+
+.card p{
+    font-size:30px;
+    font-weight:bold;
+}
+
+table{
+    width:100%;
+    margin-top:30px;
+    border-collapse:collapse;
+    background:white;
+}
+
+th{
+    background:#28a745;
+    color:white;
+    padding:12px;
+}
+
+td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:center;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    background:#28a745;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:orange;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+Counter-X Revenue Dashboard
+
+</header>
+
+<div class="container">
+
+<div class="cards">
+
+<div class="card">
+
+<h2>Total Orders</h2>
+
+<p id="orders">0</p>
+
+</div>
+
+<div class="card">
+
+<h2>Total Revenue</h2>
+
+<p id="revenue">₹0</p>
+
+</div>
+
+<div class="card">
+
+<h2>Average Order</h2>
+
+<p id="average">₹0</p>
+
+</div>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Order ID</th>
+<th>Token</th>
+<th>Amount</th>
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="revenueTable">
+
+</tbody>
+
+</table>
+
+<button onclick="refreshRevenue()">
+
+Refresh
+
+</button>
+
+</div>
+
+<script>
+
+let orders =
+JSON.parse(localStorage.getItem("orders")) || [];
+
+loadRevenue();
+
+function loadRevenue(){
+
+let html="";
+
+let totalRevenue=0;
+
+orders.forEach((order,index)=>{
+
+totalRevenue += Number(order.total || 0);
+
+html += `
+
+<tr>
+
+<td>${order.orderId || index+1}</td>
+
+<td>${order.token || "-"}</td>
+
+<td>₹${order.total || 0}</td>
+
+<td>${order.status || "Completed"}</td>
+
+</tr>
+
+`;
+
+});
+
+document.getElementById("orders").innerHTML=
+orders.length;
+
+document.getElementById("revenue").innerHTML=
+"₹"+totalRevenue;
+
+let avg=0;
+
+if(orders.length>0){
+
+avg=totalRevenue/orders.length;
+
+}
+
+document.getElementById("average").innerHTML=
+"₹"+avg.toFixed(2);
+
+document.getElementById("revenueTable").innerHTML=
+html;
+
+}
+
+function refreshRevenue(){
+
+loadRevenue();
+
+alert("Revenue Updated Successfully");
+
+}
+
+</script>
+
+</body>
+
+</html>

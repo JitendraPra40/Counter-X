@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Counter-X Admin Panel</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f5f5f5;
+}
+
+header{
+background:#28a745;
+color:white;
+padding:18px;
+text-align:center;
+font-size:30px;
+font-weight:bold;
+}
+
+.container{
+width:90%;
+margin:auto;
+margin-top:30px;
+}
+
+.form{
+
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0px 0px 10px gray;
+margin-bottom:30px;
+
+}
+
+input{
+
+width:30%;
+padding:10px;
+margin:10px;
+border:1px solid gray;
+border-radius:5px;
+
+}
+
+button{
+
+padding:10px 20px;
+border:none;
+cursor:pointer;
+border-radius:5px;
+color:white;
+
+}
+
+.add{
+
+background:#28a745;
+
+}
+
+.edit{
+
+background:orange;
+
+}
+
+.delete{
+
+background:red;
+
+}
+
+table{
+
+width:100%;
+background:white;
+border-collapse:collapse;
+
+}
+
+th{
+
+background:#28a745;
+color:white;
+padding:12px;
+
+}
+
+td{
+
+padding:12px;
+text-align:center;
+border:1px solid #ddd;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+Counter-X Admin Dashboard
+
+</header>
+
+<div class="container">
+
+<div class="form">
+
+<input type="text"
+id="foodName"
+placeholder="Food Name">
+
+<input type="number"
+id="foodPrice"
+placeholder="Price">
+
+<input type="text"
+id="foodImage"
+placeholder="Image URL">
+
+<button class="add"
+onclick="addFood()">
+
+Add Food
+
+</button>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Image</th>
+<th>Food Name</th>
+<th>Price</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="menuTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script>
+
+let menu =
+JSON.parse(localStorage.getItem("menu")) || [
+
+{
+id:1,
+name:"Burger",
+price:120,
+image:"https://via.placeholder.com/80"
+},
+
+{
+id:2,
+name:"Pizza",
+price:250,
+image:"https://via.placeholder.com/80"
+}
+
+];
+
+displayMenu();
+
+function displayMenu(){
+
+let html="";
+
+menu.forEach((food,index)=>{
+
+html+=`
+
+<tr>
+
+<td>${food.id}</td>
+
+<td>
+
+<img src="${food.image}"
+width="60">
+
+</td>
+
+<td>${food.name}</td>
+
+<td>₹${food.price}</td>
+
+<td>
+
+<button
+class="edit"
+onclick="editFood(${index})">
+
+Edit
+
+</button>
+
+<button
+class="delete"
+onclick="deleteFood(${index})">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+document.getElementById("menuTable").innerHTML=html;
+
+localStorage.setItem("menu",
+JSON.stringify(menu));
+
+}
+
+function addFood(){
+
+let name=
+document.getElementById("foodName").value;
+
+let price=
+document.getElementById("foodPrice").value;
+
+let image=
+document.getElementById("foodImage").value;
+
+if(name=="" || price==""){
+
+alert("Enter Food Details");
+
+return;
+
+}
+
+menu.push({
+
+id:menu.length+1,
+name:name,
+price:price,
+image:image
+
+});
+
+displayMenu();
+
+document.getElementById("foodName").value="";
+document.getElementById("foodPrice").value="";
+document.getElementById("foodImage").value="";
+
+}
+
+function deleteFood(index){
+
+menu.splice(index,1);
+
+displayMenu();
+
+}
+
+function editFood(index){
+
+let newName=
+prompt("Enter Food Name",
+menu[index].name);
+
+let newPrice=
+prompt("Enter Price",
+menu[index].price);
+
+if(newName!=null){
+
+menu[index].name=newName;
+
+}
+
+if(newPrice!=null){
+
+menu[index].price=newPrice;
+
+}
+
+displayMenu();
+
+}
+
+</script>
+
+</body>
+
+</html>

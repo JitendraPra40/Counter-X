@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Counter-X Kitchen</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#f5f5f5;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+header{
+    background:#28a745;
+    color:white;
+    text-align:center;
+    padding:18px;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+    margin-top:30px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th{
+    background:#28a745;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+button{
+    padding:8px 15px;
+    border:none;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+.prepare{
+    background:orange;
+}
+
+.ready{
+    background:green;
+}
+
+.complete{
+    background:blue;
+}
+
+.delete{
+    background:red;
+}
+
+button:hover{
+    opacity:0.8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+🍽️ Counter-X Kitchen Dashboard
+
+</header>
+
+<div class="container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Token No</th>
+<th>Food Items</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="kitchenTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script>
+
+let orders = [
+
+{
+token:1,
+items:"Burger, Coke",
+status:"Pending"
+},
+
+{
+token:2,
+items:"Pizza",
+status:"Pending"
+},
+
+{
+token:3,
+items:"Dosa, Coffee",
+status:"Pending"
+}
+
+];
+
+displayOrders();
+
+function displayOrders(){
+
+let html="";
+
+orders.forEach((order,index)=>{
+
+html += `
+
+<tr>
+
+<td>${order.token}</td>
+
+<td>${order.items}</td>
+
+<td>${order.status}</td>
+
+<td>
+
+<button class="prepare"
+onclick="changeStatus(${index})">
+
+Next Status
+
+</button>
+
+<button class="delete"
+onclick="deleteOrder(${index})">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+document.getElementById("kitchenTable").innerHTML=html;
+
+}
+
+function changeStatus(index){
+
+if(orders[index].status=="Pending"){
+
+orders[index].status="Preparing";
+
+}
+
+else if(orders[index].status=="Preparing"){
+
+orders[index].status="Ready";
+
+}
+
+else if(orders[index].status=="Ready"){
+
+orders[index].status="Completed";
+
+}
+
+displayOrders();
+
+}
+
+function deleteOrder(index){
+
+if(orders[index].status=="Completed"){
+
+orders.splice(index,1);
+
+displayOrders();
+
+}
+
+else{
+
+alert("Complete the order first!");
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

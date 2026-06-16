@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Counter-X Menu</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+header{
+    background:#28a745;
+    color:white;
+    text-align:center;
+    padding:18px;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.container{
+
+    width:90%;
+    margin:auto;
+    margin-top:30px;
+
+}
+
+.menu{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+
+}
+
+.card{
+
+    background:white;
+    border-radius:10px;
+    box-shadow:0px 0px 8px gray;
+    text-align:center;
+    padding:20px;
+
+}
+
+.card img{
+
+    width:100%;
+    height:180px;
+    border-radius:10px;
+
+}
+
+.card h2{
+
+    margin-top:10px;
+    color:#28a745;
+
+}
+
+.card h3{
+
+    margin-top:10px;
+
+}
+
+button{
+
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    background:#28a745;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    background:orange;
+
+}
+
+.cart{
+
+    position:fixed;
+    right:20px;
+    top:20px;
+    background:white;
+    padding:10px 20px;
+    border-radius:8px;
+    box-shadow:0px 0px 5px gray;
+    font-weight:bold;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+Counter-X Food Menu
+
+</header>
+
+<div class="cart">
+
+🛒 Cart :
+<span id="count">0</span>
+
+</div>
+
+<div class="container">
+
+<div class="menu">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500">
+
+<h2>Burger</h2>
+
+<h3>₹120</h3>
+
+<button onclick="addCart('Burger',120)">
+Add To Cart
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500">
+
+<h2>Pizza</h2>
+
+<h3>₹250</h3>
+
+<button onclick="addCart('Pizza',250)">
+Add To Cart
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=500">
+
+<h2>Dosa</h2>
+
+<h3>₹80</h3>
+
+<button onclick="addCart('Dosa',80)">
+Add To Cart
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500">
+
+<h2>Idli</h2>
+
+<h3>₹50</h3>
+
+<button onclick="addCart('Idli',50)">
+Add To Cart
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1608039755401-742074f0548d?w=500">
+
+<h2>Fried Rice</h2>
+
+<h3>₹150</h3>
+
+<button onclick="addCart('Fried Rice',150)">
+Add To Cart
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?w=500">
+
+<h2>Noodles</h2>
+
+<h3>₹140</h3>
+
+<button onclick="addCart('Noodles',140)">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let cart=[];
+
+function addCart(name,price){
+
+cart.push({
+name:name,
+price:price
+});
+
+document.getElementById("count").innerHTML=cart.length;
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+alert(name+" Added Successfully");
+
+}
+
+</script>
+
+</body>
+
+</html>

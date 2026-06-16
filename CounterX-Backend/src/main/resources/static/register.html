@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Counter-X Register</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(to right,#28a745,#20c997);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.register-box{
+
+    width:450px;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px gray;
+
+}
+
+.register-box h2{
+
+    text-align:center;
+    color:#28a745;
+    margin-bottom:20px;
+
+}
+
+input{
+
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+
+}
+
+button{
+
+    width:100%;
+    padding:12px;
+    background:#28a745;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:18px;
+
+}
+
+button:hover{
+
+    background:orange;
+
+}
+
+p{
+
+    text-align:center;
+    margin-top:15px;
+
+}
+
+a{
+
+    text-decoration:none;
+    color:blue;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="register-box">
+
+<h2>Counter-X Registration</h2>
+
+<input
+type="text"
+id="name"
+placeholder="Full Name">
+
+<input
+type="email"
+id="email"
+placeholder="Email">
+
+<input
+type="text"
+id="mobile"
+placeholder="Mobile Number">
+
+<input
+type="text"
+id="username"
+placeholder="Username">
+
+<input
+type="password"
+id="password"
+placeholder="Password">
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Confirm Password">
+
+<button onclick="registerUser()">
+
+Register
+
+</button>
+
+<p>
+
+Already have an account?
+
+<a href="login.html">
+
+Login Here
+
+</a>
+
+</p>
+
+</div>
+
+<script>
+
+function registerUser(){
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let mobile=document.getElementById("mobile").value;
+let username=document.getElementById("username").value;
+let password=document.getElementById("password").value;
+let confirmPassword=document.getElementById("confirmPassword").value;
+
+if(name=="" || email=="" || mobile=="" ||
+username=="" || password==""){
+
+alert("Please fill all fields");
+
+return;
+
+}
+
+if(password!=confirmPassword){
+
+alert("Password does not match");
+
+return;
+
+}
+
+let users=
+JSON.parse(localStorage.getItem("users")) || [];
+
+users.push({
+
+name:name,
+email:email,
+mobile:mobile,
+username:username,
+password:password
+
+});
+
+localStorage.setItem(
+"users",
+JSON.stringify(users)
+);
+
+alert("Registration Successful");
+
+window.location.href="login.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

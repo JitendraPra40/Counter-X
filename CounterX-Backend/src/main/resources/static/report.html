@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Counter-X Sales Report</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f5f5;
+}
+
+header{
+    background:#28a745;
+    color:white;
+    text-align:center;
+    padding:18px;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+    margin-top:30px;
+}
+
+.summary{
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.card{
+    width:220px;
+    background:white;
+    padding:20px;
+    margin:10px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0px 0px 8px gray;
+}
+
+.card h2{
+    color:#28a745;
+}
+
+.card p{
+    font-size:28px;
+    font-weight:bold;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th{
+    background:#28a745;
+    color:white;
+    padding:12px;
+}
+
+td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:center;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    background:#28a745;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:orange;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+Counter-X Sales Report
+
+</header>
+
+<div class="container">
+
+<div class="summary">
+
+<div class="card">
+
+<h2>Total Orders</h2>
+
+<p id="totalOrders">0</p>
+
+</div>
+
+<div class="card">
+
+<h2>Total Revenue</h2>
+
+<p id="totalRevenue">₹0</p>
+
+</div>
+
+<div class="card">
+
+<h2>Completed</h2>
+
+<p id="completedOrders">0</p>
+
+</div>
+
+<div class="card">
+
+<h2>Pending</h2>
+
+<p id="pendingOrders">0</p>
+
+</div>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Order ID</th>
+<th>Token</th>
+<th>Amount</th>
+<th>Status</th>
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody id="reportTable">
+
+</tbody>
+
+</table>
+
+<button onclick="window.print()">
+
+Print Report
+
+</button>
+
+</div>
+
+<script>
+
+let orders =
+JSON.parse(localStorage.getItem("orders")) || [];
+
+let html="";
+
+let revenue=0;
+let completed=0;
+let pending=0;
+
+orders.forEach((order,index)=>{
+
+revenue += Number(order.total || 0);
+
+if(order.status=="Completed"){
+
+completed++;
+
+}else{
+
+pending++;
+
+}
+
+html += `
+
+<tr>
+
+<td>${order.orderId || index+1}</td>
+
+<td>${order.token || "-"}</td>
+
+<td>₹${order.total || 0}</td>
+
+<td>${order.status || "Pending"}</td>
+
+<td>${order.date || new Date().toLocaleDateString()}</td>
+
+</tr>
+
+`;
+
+});
+
+document.getElementById("totalOrders").innerHTML =
+orders.length;
+
+document.getElementById("totalRevenue").innerHTML =
+"₹"+revenue;
+
+document.getElementById("completedOrders").innerHTML =
+completed;
+
+document.getElementById("pendingOrders").innerHTML =
+pending;
+
+document.getElementById("reportTable").innerHTML =
+html;
+
+</script>
+
+</body>
+
+</html>
