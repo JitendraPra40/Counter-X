@@ -1,0 +1,58 @@
+/* BillPage.css */
+.bill-page { padding-bottom: 4rem; }
+.bill-wrapper { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+
+/* Success Header */
+.bill-success {
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 1rem;
+  padding: 3rem 2rem 2rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+}
+.bill-success__icon {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: rgba(16,185,129,0.15);
+  border: 2px solid var(--color-success);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-success);
+  animation: pulse 2s ease-in-out infinite;
+}
+.bill-success__title {
+  font-family: var(--font-head); font-size: 2rem; font-weight: 900; color: var(--color-text);
+}
+.bill-success__subtitle { color: var(--color-text-2); font-size: 0.95rem; }
+
+/* Token */
+.bill-token {
+  background: linear-gradient(135deg, var(--color-primary-glow), rgba(124,58,237,0.1));
+  border: 1px solid rgba(255,107,43,0.3);
+  border-radius: var(--radius-lg);
+  padding: 1rem 2.5rem;
+  display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+}
+.bill-token__label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-3); }
+.bill-token__value { font-family: var(--font-head); font-size: 2.5rem; font-weight: 900; color: var(--color-primary); }
+
+/* Receipt Card */
+.bill-card { padding: 1.5rem; }
+.bill-card__header {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-weight: 700; color: var(--color-text); margin-bottom: 1.25rem;
+}
+.bill-card__id { margin-left: auto; font-size: 0.82rem; font-weight: 600; color: var(--color-text-3); }
+
+.bill-detail-rows { display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 1rem; }
+.bill-detail-row {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.9rem; color: var(--color-text-2);
+}
+
+.bill-totals { display: flex; flex-direction: column; gap: 0.75rem; }
+.bill-total-row { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--color-text-2); }
+.bill-total-row--grand { color: var(--color-text); font-weight: 700; }
+.bill-grand-total { font-family: var(--font-head); font-size: 1.5rem; font-weight: 800; color: var(--color-success); }
+
+/* Actions */
+.bill-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
