@@ -313,18 +313,3 @@ The system uses stateless **JWT (JSON Web Token)** authentication.
 ```
 
 ---
-
-## ⚡ Technical Gotchas & Mismatches (Tech Debt Alerts)
-
-> [!WARNING]
-> **Bill Generation Subtotal NPE Risk**
-> In `PaymentServiceImpl.processPayment(...)`, the backend instantiates a `BillDTO` to pass to `billService.generateBill(billDTO)`. It sets `totalAmount` but does **not** populate `subTotal`.
-> In `BillServiceImpl.generateBill(BillDTO dto)`, the code executes `double subTotal = dto.getSubTotal()`. Since `subTotal` is never set on the DTO, it is `null`. Assigning a `null` wrapper object `Double` to primitive type `double` throws a `NullPointerException` (NPE) and crashes the payment workflow.
-> * **Frontend Workaround:** Ensure that before simulating payment, the checkout matches backend expectations. A patch is recommended on the backend to avoid this exception (e.g. defaulting subtotal or utilizing the total amount).
-
-> [!NOTE]
-> **Duplicate Category Enum Names**
-> The codebase has two packages named `Category`:
-> 1. `com.CounterX.entity.Category` (BREAKFAST, MEALS, etc. used for **Menu Items**)
-> 2. `com.CounterX.enums.Category` (VEGETABLE, FRUIT, etc. used for **Inventory Items**)
-> Ensure you map inputs to the appropriate endpoint context to avoid payload rejection.
