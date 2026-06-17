@@ -1,14 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-// import { useToast } from '../context/ToastContext';
 import Button from '../components/Button';
 import styles from '../styles/Receipt.module.css';
 import BrandLogo from "../components/BrandLogo";
 
 export default function Receipt() {
   const { completedOrder } = useCart();
-  // const { addToast } = useToast();
   const navigate = useNavigate();
   const receiptRef = useRef(null);
 
@@ -20,32 +18,12 @@ export default function Receipt() {
 
   const handlePrint = () => window.print();
 
-  // const handleCopy = () => {
-  //   const lines = [
-  //     '=== CounterX Receipt ===',
-  //     `Order: ${completedOrder.id}`,
-  //     `Date: ${new Date(completedOrder.createdAt).toLocaleString('en-IN')}`,
-  //     `Type: ${completedOrder.type}`,
-  //     '------------------------',
-  //     ...completedOrder.items.map(i => `${i.name} x${i.qty}  ₹${(i.price * i.qty).toFixed(2)}`),
-  //     '------------------------',
-  //     `Subtotal: ₹${completedOrder.subtotal.toFixed(2)}`,
-  //     `Tax (18%): ₹${completedOrder.tax.toFixed(2)}`,
-  //     `Total: ₹${completedOrder.total.toFixed(2)}`,
-  //     '========================',
-  //     'Thank you for dining with us!',
-  //   ].join('\n');
-  //   navigator.clipboard.writeText(lines);
-  //   addToast('Receipt copied to clipboard', 'success');
-  // };
-
   const orderDate = new Date(completedOrder.createdAt);
 
   return (
     <div className={styles.page}>
       <div className={styles.receipt} ref={receiptRef}>
         <div className={styles.restaurantHeader}>
-          {/* <div className={styles.logoMark}>CX</div> */}
           <BrandLogo size={140} />
           <h1 className={styles.restaurantName}>CounterX</h1>
           <p className={styles.restaurantTagline}>Modern Restaurant OS</p>
@@ -82,7 +60,7 @@ export default function Receipt() {
 
         <div className={styles.totals}>
           <div className={styles.totalRow}><span>Subtotal</span><span>Rs.{completedOrder.subtotal.toFixed(2)}</span></div>
-          <div className={styles.totalRow}><span>GST & Taxes (18%)</span><span>Rs.{completedOrder.tax.toFixed(2)}</span></div>
+          <div className={styles.totalRow}><span>GST &amp; Taxes (18%)</span><span>Rs.{completedOrder.tax.toFixed(2)}</span></div>
           <div className={`${styles.totalRow} ${styles.grandTotal}`}>
             <span>Total Paid</span><span>Rs.{completedOrder.total.toFixed(2)}</span>
           </div>
@@ -96,23 +74,14 @@ export default function Receipt() {
         </div>
       </div>
 
-      {/* <div className={styles.actions}> */}
-        {/* <Button variant="outline" onClick={handleCopy}>Copy Receipt</Button>
-        <Button variant="ghost" onClick={handlePrint}>Print</Button>
-        <Button variant="primary" onClick={() => navigate('/welcome')}>New Order</Button> */}
-        <div className={styles.actions}>
-  <Button variant="outline" onClick={handlePrint}>
-    Print Receipt
-  </Button>
-
-  <Button
-    variant="primary"
-    onClick={() => navigate('/welcome')}
-  >
-    New Order
-  </Button>
-</div>
+      <div className={styles.actions}>
+        <Button variant="outline" onClick={handlePrint}>
+          Print Receipt
+        </Button>
+        <Button variant="primary" onClick={() => navigate('/welcome')}>
+          New Order
+        </Button>
       </div>
-    // </div>
+    </div>
   );
 }

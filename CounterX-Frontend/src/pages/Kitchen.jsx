@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getOrders, updateOrderStatus } from '../api/orderApi';
+import { getKitchenOrders, updateKitchenOrderStatus } from '../api/kitchenApi';
 import { useToast } from '../context/ToastContext';
 import styles from '../styles/Kitchen.module.css';
 import BrandLogo from "../components/BrandLogo";
@@ -32,14 +32,21 @@ export default function Kitchen() {
   }, []);
 
   const loadOrders = () => {
-    getOrders().then(data => { setOrders(data); setLoading(false); });
+    getKitchenOrders()
+      .then(data => { setOrders(data); setLoading(false); })
+      .catch(() => setLoading(false));
   };
 
   const advance = async (order, nextStatus) => {
-    const updated = await updateOrderStatus(order.id, nextStatus);
-    setOrders(prev => prev.map(o => o.id === updated.id ? updated : o));
-    const labels = { preparing: 'Now Preparing', ready: 'Ready to Serve!', completed: 'Order Complete' };
-    addToast(`${order.id} → ${labels[nextStatus]}`, nextStatus === 'ready' ? 'success' : 'info');
+    try {
+      // Use the numeric orderId for the API call
+      const updated = await updateKitchenOrderStatus(order.orderId, nextStatus);
+      setOrders(prev => prev.map(o => o.orderId === order.orderId ? updated : o));
+      const labels = { preparing: 'Now Preparing', ready: 'Ready to Serve!', completed: 'Order Complete' };
+      addToast(`${order.id} → ${labels[nextStatus]}`, nextStatus === 'ready' ? 'success' : 'info');
+    } catch {
+      addToast('Failed to update order status', 'error');
+    }
   };
 
   const getElapsed = (createdAt) => {
@@ -54,7 +61,6 @@ export default function Kitchen() {
       {/* Kitchen header */}
       <div className={styles.header}>
         <div className={styles.headerLeft}>
-          {/* <div className={styles.logo}>CX</div> */}
           <BrandLogo size={120} />
           <div>
             <div className={styles.title}>Kitchen Display</div>
@@ -104,7 +110,7 @@ export default function Kitchen() {
                   ) : (
                     colOrders.map(order => (
                       <div
-                        key={order.id}
+                        key={order.orderId}
                         className={styles.card}
                         style={{ '--card-accent': COLOR[col.key] }}
                       >

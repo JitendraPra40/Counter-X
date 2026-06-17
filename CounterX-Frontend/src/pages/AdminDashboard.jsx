@@ -131,7 +131,7 @@ export default function Admin() {
                     <tbody>
                       {orders.map(order => (
                         <tr key={order.id}>
-                          <td className={styles.orderId}>{order.id}</td>
+                          <td className={styles.orderId}>{order.displayId ?? order.id}</td>
                           <td>{order.customer}</td>
                           <td>{order.items} items</td>
                           <td className={styles.total}>₹{order.total.toFixed(2)}</td>
