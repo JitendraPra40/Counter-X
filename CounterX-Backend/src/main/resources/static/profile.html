@@ -3,83 +3,83 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Counter-X Profile</title>
+    <title>Counter-X Profile</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<style>
+    <style>
 
-body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f5f5f5;
-}
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+        }
 
-header{
-    background:#28a745;
-    color:white;
-    text-align:center;
-    padding:18px;
-    font-size:28px;
-    font-weight:bold;
-}
+        header {
+            background: #28a745;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            font-size: 28px;
+            font-weight: bold;
+        }
 
-.container{
-    width:500px;
-    margin:40px auto;
-}
+        .container {
+            width: 500px;
+            margin: 40px auto;
+        }
 
-.profile-card{
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0px 0px 10px gray;
-}
+        .profile-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
 
-.profile-card h2{
-    text-align:center;
-    color:#28a745;
-    margin-bottom:20px;
-}
+        .profile-card h2 {
+            text-align: center;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
 
-.profile-img{
-    text-align:center;
-}
+        .profile-img {
+            text-align: center;
+        }
 
-.profile-img img{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-}
+        .profile-img img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
 
-input{
-    width:100%;
-    padding:10px;
-    margin-top:10px;
-    border:1px solid #ccc;
-    border-radius:5px;
-}
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-button{
-    width:100%;
-    margin-top:15px;
-    padding:12px;
-    background:#28a745;
-    color:white;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-    font-size:18px;
-}
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 12px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
 
-button:hover{
-    background:orange;
-}
+        button:hover {
+            background: orange;
+        }
 
-</style>
+    </style>
 
 </head>
 
@@ -87,97 +87,97 @@ button:hover{
 
 <header>
 
-Counter-X User Profile
+    Counter-X User Profile
 
 </header>
 
 <div class="container">
 
-<div class="profile-card">
+    <div class="profile-card">
 
-<div class="profile-img">
+        <div class="profile-img">
 
-<img src="https://via.placeholder.com/120" id="profileImage">
+            <img src="https://via.placeholder.com/120" id="profileImage">
 
-</div>
+        </div>
 
-<h2>My Profile</h2>
+        <h2>My Profile</h2>
 
-<input
-type="text"
-id="name"
-placeholder="Full Name">
+        <input
+                type="text"
+                id="name"
+                placeholder="Full Name">
 
-<input
-type="email"
-id="email"
-placeholder="Email">
+        <input
+                type="email"
+                id="email"
+                placeholder="Email">
 
-<input
-type="text"
-id="mobile"
-placeholder="Mobile Number">
+        <input
+                type="text"
+                id="mobile"
+                placeholder="Mobile Number">
 
-<input
-type="text"
-id="username"
-placeholder="Username">
+        <input
+                type="text"
+                id="username"
+                placeholder="Username">
 
-<button onclick="saveProfile()">
+        <button onclick="saveProfile()">
 
-Update Profile
+            Update Profile
 
-</button>
+        </button>
 
-</div>
+    </div>
 
 </div>
 
 <script>
 
-loadProfile();
+    loadProfile();
 
-function loadProfile(){
+    function loadProfile() {
 
-let user =
-JSON.parse(localStorage.getItem("profile"));
+        let user =
+            JSON.parse(localStorage.getItem("profile"));
 
-if(user){
+        if (user) {
 
-document.getElementById("name").value=user.name;
+            document.getElementById("name").value = user.name;
 
-document.getElementById("email").value=user.email;
+            document.getElementById("email").value = user.email;
 
-document.getElementById("mobile").value=user.mobile;
+            document.getElementById("mobile").value = user.mobile;
 
-document.getElementById("username").value=user.username;
+            document.getElementById("username").value = user.username;
 
-}
+        }
 
-}
+    }
 
-function saveProfile(){
+    function saveProfile() {
 
-let user={
+        let user = {
 
-name:document.getElementById("name").value,
+            name: document.getElementById("name").value,
 
-email:document.getElementById("email").value,
+            email: document.getElementById("email").value,
 
-mobile:document.getElementById("mobile").value,
+            mobile: document.getElementById("mobile").value,
 
-username:document.getElementById("username").value
+            username: document.getElementById("username").value
 
-};
+        };
 
-localStorage.setItem(
-"profile",
-JSON.stringify(user)
-);
+        localStorage.setItem(
+            "profile",
+            JSON.stringify(user)
+        );
 
-alert("Profile Updated Successfully");
+        alert("Profile Updated Successfully");
 
-}
+    }
 
 </script>
 

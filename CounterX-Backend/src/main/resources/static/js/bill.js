@@ -7,46 +7,46 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 let transactionId =
-localStorage.getItem("transactionId") || "N/A";
+    localStorage.getItem("transactionId") || "N/A";
 
 let totalAmount =
-localStorage.getItem("totalAmount") || 0;
+    localStorage.getItem("totalAmount") || 0;
 
 
 // Generate Bill Number
 
 let billNumber =
-"BL" + Math.floor(Math.random() * 100000);
+    "BL" + Math.floor(Math.random() * 100000);
 
 
 // Generate Token Number
 
 let tokenNumber =
-Math.floor(Math.random() * 900) + 100;
+    Math.floor(Math.random() * 900) + 100;
 
 
 // Current Date & Time
 
 let today =
-new Date().toLocaleString();
+    new Date().toLocaleString();
 
 
 // Display Bill Details
 
 document.getElementById("billNumber").innerHTML =
-billNumber;
+    billNumber;
 
 document.getElementById("tokenNumber").innerHTML =
-tokenNumber;
+    tokenNumber;
 
 document.getElementById("transactionId").innerHTML =
-transactionId;
+    transactionId;
 
 document.getElementById("billDate").innerHTML =
-today;
+    today;
 
 document.getElementById("totalAmount").innerHTML =
-totalAmount;
+    totalAmount;
 
 
 // Display Food Items
@@ -55,7 +55,7 @@ let html = "";
 
 cart.forEach(item => {
 
-html += `
+    html += `
 
 <tr>
 
@@ -70,36 +70,36 @@ html += `
 });
 
 document.getElementById("billItems").innerHTML =
-html;
+    html;
 
 
 // Print Bill
 
-function printBill(){
+function printBill() {
 
-window.print();
+    window.print();
 
 }
 
 
 // Download Bill
 
-function downloadBill(){
+function downloadBill() {
 
-alert("Bill Downloaded Successfully");
+    alert("Bill Downloaded Successfully");
 
 }
 
 
 // New Order
 
-function newOrder(){
+function newOrder() {
 
-localStorage.removeItem("cart");
-localStorage.removeItem("transactionId");
-localStorage.removeItem("totalAmount");
-localStorage.removeItem("paymentStatus");
+    localStorage.removeItem("cart");
+    localStorage.removeItem("transactionId");
+    localStorage.removeItem("totalAmount");
+    localStorage.removeItem("paymentStatus");
 
-window.location.href="menu.html";
+    window.location.href = "menu.html";
 
 }

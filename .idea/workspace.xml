@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6ae4c5b-838f-4102-abfa-3985a594bb97" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Inventory_JSON_Data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CounterX-Backend/src/main/java/com/CounterX/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/CounterX-Backend/src/main/java/com/CounterX/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CounterX-Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CounterX-Backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CounterX-Backend/src/main/resources/static/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/CounterX-Backend/src/main/resources/static/js/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CounterX-Backend/src/main/resources/static/js/bill.js" beforeDir="false" afterPath="$PROJECT_DIR$/CounterX-Backend/src/main/resources/static/js/bill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CounterX-Backend/src/main/resources/static/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/CounterX-Backend/src/main/resources/static/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CounterX-Backend/src/main/resources/static/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/CounterX-Backend/src/main/resources/static/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CounterX-Backend/src/main/resources/static/token.html" beforeDir="false" afterPath="$PROJECT_DIR$/CounterX-Backend/src/main/resources/static/token.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,10 +29,10 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="3FDEfgDwBDhwDURpv2qiWeOS5d7" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -39,13 +42,15 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.CounterXBackendApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "Main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/User/Desktop/Counter-X"
+    "last_opened_file_path": "C:/Users/User/Desktop/Counter-X",
+    "nodejs_package_manager_path": "npm"
   }
 }]]></component>
   <component name="RecentsManager">

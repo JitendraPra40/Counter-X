@@ -6,23 +6,23 @@
 
 let orders = JSON.parse(localStorage.getItem("orders")) || [
 
-{
-    token:101,
-    items:"Burger, Coke",
-    status:"Pending"
-},
+    {
+        token: 101,
+        items: "Burger, Coke",
+        status: "Pending"
+    },
 
-{
-    token:102,
-    items:"Pizza",
-    status:"Pending"
-},
+    {
+        token: 102,
+        items: "Pizza",
+        status: "Pending"
+    },
 
-{
-    token:103,
-    items:"Dosa, Coffee",
-    status:"Pending"
-}
+    {
+        token: 103,
+        items: "Dosa, Coffee",
+        status: "Pending"
+    }
 
 ];
 
@@ -33,13 +33,13 @@ displayOrders();
 // Display Orders
 // ===============================
 
-function displayOrders(){
+function displayOrders() {
 
-let html="";
+    let html = "";
 
-orders.forEach((order,index)=>{
+    orders.forEach((order, index) => {
 
-html += `
+        html += `
 
 <tr>
 
@@ -69,17 +69,16 @@ Delete
 
 `;
 
-});
+    });
 
-document.getElementById("kitchenTable").innerHTML = html;
+    document.getElementById("kitchenTable").innerHTML = html;
 
-localStorage.setItem(
-"orders",
-JSON.stringify(orders)
-);
+    localStorage.setItem(
+        "orders",
+        JSON.stringify(orders)
+    );
 
 }
-
 
 
 // ===============================
@@ -87,80 +86,73 @@ JSON.stringify(orders)
 // Pending -> Preparing -> Ready -> Completed
 // ===============================
 
-function nextStatus(index){
+function nextStatus(index) {
 
-if(orders[index].status=="Pending"){
+    if (orders[index].status == "Pending") {
 
-orders[index].status="Preparing";
+        orders[index].status = "Preparing";
 
-}
+    } else if (orders[index].status == "Preparing") {
 
-else if(orders[index].status=="Preparing"){
+        orders[index].status = "Ready";
 
-orders[index].status="Ready";
+    } else if (orders[index].status == "Ready") {
 
-}
+        orders[index].status = "Completed";
 
-else if(orders[index].status=="Ready"){
+    }
 
-orders[index].status="Completed";
-
-}
-
-displayOrders();
+    displayOrders();
 
 }
-
 
 
 // ===============================
 // Delete Completed Order
 // ===============================
 
-function deleteOrder(index){
+function deleteOrder(index) {
 
-if(orders[index].status!="Completed"){
+    if (orders[index].status != "Completed") {
 
-alert("Complete the order first!");
+        alert("Complete the order first!");
 
-return;
+        return;
+
+    }
+
+    orders.splice(index, 1);
+
+    displayOrders();
 
 }
-
-orders.splice(index,1);
-
-displayOrders();
-
-}
-
 
 
 // ===============================
 // Add New Order
 // ===============================
 
-function addOrder(token,items){
+function addOrder(token, items) {
 
-orders.push({
+    orders.push({
 
-token:token,
-items:items,
-status:"Pending"
+        token: token,
+        items: items,
+        status: "Pending"
 
-});
+    });
 
-displayOrders();
+    displayOrders();
 
 }
-
 
 
 // ===============================
 // Refresh Orders
 // ===============================
 
-function refreshOrders(){
+function refreshOrders() {
 
-displayOrders();
+    displayOrders();
 
 }
