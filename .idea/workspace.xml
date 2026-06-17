@@ -5,6 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6ae4c5b-838f-4102-abfa-3985a594bb97" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/eslint.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/public/favicon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/public/icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/App.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/api/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/api/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/api/axiosInstance.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/api/cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/api/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/api/orders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/assets/hero.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/assets/react.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/assets/vite.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/components/AdminSidebar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/components/AdminSidebar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/components/MenuCard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/components/MenuCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/components/Navbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/components/Navbar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/context/AuthContext.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/main.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/admin/AdminLogin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/admin/AdminLogin.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/admin/AdminPages.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/admin/Dashboard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/admin/InventoryPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/admin/KitchenDisplay.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/admin/MenuManagement.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/admin/OrdersPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/admin/SalesReport.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/customer/BillPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/customer/BillPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/customer/CartPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/customer/CartPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/customer/CheckoutPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/customer/CheckoutPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/customer/HomePage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/customer/HomePage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/customer/MenuPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/src/pages/customer/MenuPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CounterX-Frontend/vite.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/implementation_plan.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CounterX-Backend/src/main/resources/static/admin.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CounterX-Backend/src/main/resources/static/bill.html" beforeDir="false" />
@@ -36,6 +85,10 @@
       <change beforePath="$PROJECT_DIR$/CounterX-Backend/src/main/resources/static/report.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CounterX-Backend/src/main/resources/static/revenue.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CounterX-Backend/src/main/resources/static/token.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory.md" beforeDir="false" afterPath="$PROJECT_DIR$/CounterX-Backend/docs/Inventory.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory_JSON_Data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CounterX-Backend/docs/Inventory_JSON_Data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-docs.html" beforeDir="false" afterPath="$PROJECT_DIR$/CounterX-Backend/docs/api-docs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openapi.json" beforeDir="false" afterPath="$PROJECT_DIR$/CounterX-Backend/docs/openapi.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +132,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\Counter-X" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\Counter-X\CounterX-Backend\docs" />
     </key>
   </component>
   <component name="RunManager">
