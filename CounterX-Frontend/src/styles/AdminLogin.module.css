@@ -1,0 +1,191 @@
+/* ─── CounterX Tokens ─── */
+.page {
+  --primary: #5a9e1a;
+  --primary-dark: #3d7210;
+  --primary-light: #a8d96b;
+  --secondary: #8cc63f;
+  --dark: #1a2e08;
+  --text: #2c4a10;
+  --muted: #5a7840;
+  --card: #ffffff;
+  --border: #c6e09a;
+  --border-focus: #5a9e1a;
+  --border-light: rgba(140, 198, 63, 0.25);
+  --shadow-md: 0 4px 20px rgba(61, 114, 16, 0.15);
+  --shadow-lg: 0 12px 40px rgba(61, 114, 16, 0.22);
+  --ff-display: 'Segoe UI', system-ui, sans-serif;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --transition: 0.2s ease;
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f4fce8 0%, #edf7dc 50%, #f0fde8 100%);
+  font-family: var(--ff-display);
+  padding: 24px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── Background blobs ─── */
+.page::before {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, #a8d96b, transparent 70%);
+  top: -140px;
+  right: -100px;
+  border-radius: 50%;
+  opacity: 0.35;
+  pointer-events: none;
+  animation: blobFloat 8s ease-in-out infinite;
+}
+
+.page::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #8cc63f, transparent 70%);
+  bottom: -80px;
+  left: -80px;
+  border-radius: 50%;
+  opacity: 0.3;
+  pointer-events: none;
+  animation: blobFloat 8s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(18px, -18px) scale(1.05); }
+  70%       { transform: translate(-12px, 12px) scale(0.96); }
+}
+
+/* ─── Card ─── */
+.card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 44px 40px 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+/* ─── Lock icon above heading ─── */
+.card::before {
+  content: '🔑';
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ─── Heading ─── */
+.card h1 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 6px;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+/* ─── Subtle subtitle line under heading ─── */
+.card h1::after {
+  content: 'Staff access only';
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0;
+  margin-top: 4px;
+}
+
+/* ─── Inputs ─── */
+.card input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  font-family: var(--ff-display);
+  color: var(--dark);
+  background: #f7fdf0;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+  box-sizing: border-box;
+}
+
+.card input::placeholder {
+  color: #9ab87a;
+  font-size: 0.88rem;
+}
+
+.card input:focus {
+  border-color: var(--border-focus);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(90, 158, 26, 0.14);
+}
+
+/* ─── Submit Button ─── */
+.card button[type='submit'] {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.98rem;
+  font-weight: 700;
+  font-family: var(--ff-display);
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 14px rgba(90, 158, 26, 0.3);
+  margin-top: 4px;
+}
+
+.card button[type='submit']:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(61, 114, 16, 0.35);
+}
+
+.card button[type='submit']:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(61, 114, 16, 0.2);
+}
+
+/* ─── Footer note inside card ─── */
+.card::after {
+  content: 'CounterX · Restaurant OS';
+  display: block;
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 6px;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 480px) {
+  .card {
+    padding: 36px 24px 32px;
+  }
+
+  .card h1 {
+    font-size: 1.35rem;
+  }
+}

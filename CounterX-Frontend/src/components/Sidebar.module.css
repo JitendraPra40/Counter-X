@@ -1,0 +1,104 @@
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: var(--dark);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg) var(--space-md);
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+.logo {
+  width: 36px;
+  height: 36px;
+  background: var(--primary);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brandName {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 11px var(--space-md);
+  border-radius: var(--radius-md);
+  color: rgba(255,255,255,0.55);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+.link:hover {
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.85);
+}
+.active {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+.active:hover { background: var(--primary-dark); }
+
+.linkIcon { font-size: 1.1rem; width: 20px; text-align: center; }
+.linkLabel { font-size: 0.88rem; }
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: var(--space-lg);
+}
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary-alpha);
+  color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.adminName { font-size: 0.82rem; font-weight: 600; color: #fff; }
+.adminRole { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+    padding: var(--space-md) var(--space-sm);
+  }
+  .brandName, .linkLabel, .adminName, .adminRole { display: none; }
+  .brand { justify-content: center; }
+  .link { justify-content: center; }
+  .footer { justify-content: center; }
+}

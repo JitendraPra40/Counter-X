@@ -1,0 +1,157 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.content {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.amountBanner {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-align: center;
+  color: #fff;
+  box-shadow: var(--shadow-primary);
+}
+.amountLabel { font-size: 0.82rem; opacity: 0.8; font-weight: 500; margin-bottom: 4px; }
+.amountValue { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; }
+
+/* Tabs */
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 4px;
+}
+.tab {
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  font-family: var(--font);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.activeTab {
+  background: var(--card);
+  color: var(--dark);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Panel */
+.panel {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  align-items: center;
+}
+.panelHint { font-size: 0.85rem; color: var(--muted); text-align: center; }
+
+/* QR */
+.qrWrap {
+  position: relative;
+  display: inline-block;
+}
+.qrScanRing {
+  position: absolute;
+  inset: -8px;
+  border: 3px solid var(--primary);
+  border-radius: var(--radius-md);
+  animation: scanPulse 2s ease-in-out infinite;
+}
+@keyframes scanPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%  { opacity: 0.4; transform: scale(1.03); }
+}
+.qrImg {
+  width: 180px; height: 180px;
+  border-radius: var(--radius-md);
+  display: block;
+  position: relative;
+}
+.upiId {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark);
+  background: var(--border-light);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+}
+.upiAmount {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Success */
+.successAnim {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-xl);
+}
+.successCircle {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--success);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+.successText { font-size: 1.3rem; font-weight: 700; color: var(--dark); }
+.successSub  { font-size: 0.85rem; color: var(--muted); }
+
+/* Card preview */
+.cardPreview {
+  width: 100%;
+  background: linear-gradient(135deg, var(--dark) 0%, #2d2d2d 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  position: relative;
+  overflow: hidden;
+}
+.cardPreview::after {
+  content: '';
+  position: absolute;
+  top: -60px; right: -40px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+.cardChip { font-size: 1.8rem; margin-bottom: var(--space-lg); }
+.cardNumber { font-size: 1.1rem; letter-spacing: 0.12em; margin-bottom: var(--space-lg); }
+.cardBottom { display: flex; justify-content: space-between; }
+.cardFieldLabel { font-size: 0.6rem; opacity: 0.5; text-transform: uppercase; letter-spacing: 0.1em; font-family: var(--font); margin-bottom: 2px; }
+.cardFieldValue { font-size: 0.88rem; font-weight: 500; }
+
+.form { width: 100%; display: flex; flex-direction: column; gap: var(--space-md); }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
